@@ -52,7 +52,7 @@ docker-compose --version
 sudo apt install net-tools -y
 
 #activate changes on group
-newgrp docker
+#newgrp docker
 
 ########### DOCKER INSTALL ENDS #########
 
@@ -76,4 +76,6 @@ sudo systemctl restart containerd
 
 cd ..
 
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 > cluster-init.txt
+cat cluster-init.txt 
+tail -2 cluster-init.txt > token.txt
