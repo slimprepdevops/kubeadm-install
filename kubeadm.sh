@@ -73,3 +73,5 @@ sudo cp /etc/containerd/config.toml /etc/containerd/config.toml_copy
 sudo cp config.toml /etc/containerd/config.toml
 
 sudo systemctl restart containerd
+
+cd ..
