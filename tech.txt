@@ -1,2 +1,0 @@
-sudo
-cat kubectl version
