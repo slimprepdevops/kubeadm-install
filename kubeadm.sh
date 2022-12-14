@@ -75,3 +75,5 @@ sudo cp config.toml /etc/containerd/config.toml
 sudo systemctl restart containerd
 
 cd ..
+
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
