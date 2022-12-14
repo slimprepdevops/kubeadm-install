@@ -76,6 +76,6 @@ sudo systemctl restart containerd
 
 cd ..
 
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16 > cluster-init.txt
-cat cluster-init.txt 
-tail -2 cluster-init.txt > token.txt
+echo "net.bridge.bridge-nf-call-iptables=1" |
+  sudo tee -a /etc/sysctl.conf
+  sudo sysctl -p
