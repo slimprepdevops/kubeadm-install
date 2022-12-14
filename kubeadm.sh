@@ -1,5 +1,5 @@
 #!/bin/bash
-
+######### INSTALL DOCKER ###########
 # update apt
 sudo apt-get update -y
 
@@ -53,15 +53,23 @@ sudo apt install net-tools -y
 
 #activate changes on group
 newgrp docker
+
+########### DOCKER INSTALL ENDS #########
+
+####### INSTALL KUBEADM #########
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] \
+https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
-## git clone lllllll.github.com/config.toml
-## chmod 644 config.toml
-## sudo cp /etc/containerd/config.toml /etc/containerd/config.toml_copy
-## sudo cp ~/config.toml /etc/containerd/config.toml
+# MODIFY CONTAINERD CONFIG FILE #
+chmod 644 config.toml
+sudo cp /etc/containerd/config.toml /etc/containerd/config.toml_copy
+sudo cp ~/config.toml /etc/containerd/config.toml
+
+sudo systemctl restart containerd
