@@ -10,3 +10,5 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 kubectl version
 
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+
