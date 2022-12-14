@@ -70,6 +70,6 @@ sudo apt-mark hold kubelet kubeadm kubectl
 # MODIFY CONTAINERD CONFIG FILE #
 chmod 644 config.toml
 sudo cp /etc/containerd/config.toml /etc/containerd/config.toml_copy
-sudo cp ~/config.toml /etc/containerd/config.toml
+sudo cp config.toml /etc/containerd/config.toml
 
 sudo systemctl restart containerd
